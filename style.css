@@ -406,45 +406,45 @@ body {
   }
 
   .card {
-    padding: 8px 6px;
-    border-radius: 12px;
+    padding: 12px 10px;
+    border-radius: 14px;
   }
 
   .card-header {
-    padding: 4px 6px;
-    margin-bottom: 4px;
+    padding: 5px 10px;
+    margin-bottom: 6px;
     gap: 6px;
-    border-radius: 8px;
+    border-radius: 10px;
   }
 
   .card-header .icon {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
 
   .card-header h2 {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
   .counter-display {
-    margin: 2px 0 4px 0;
-    height: 46px;
+    margin: 4px 0 8px 0;
+    height: 52px;
   }
 
   .counter-display .value {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
   }
 
   .controls {
-    gap: 6px;
+    gap: 8px;
   }
 
   .btn {
-    height: 40px;
-    border-radius: 8px;
+    height: 48px;
+    border-radius: 10px;
   }
 
   .btn svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 }

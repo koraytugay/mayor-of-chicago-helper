@@ -27,6 +27,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize UI display
   updateAllDisplays();
 
+  // Screen Wake Lock API to prevent phone screen from going dark/sleeping
+  let wakeLock = null;
+
+  async function requestWakeLock() {
+    if ('wakeLock' in navigator) {
+      try {
+        wakeLock = await navigator.wakeLock.request('screen');
+      } catch (err) {
+        // Wake lock may fail if low battery or user settings restrict it
+      }
+    }
+  }
+
+  requestWakeLock();
+
+  // Re-acquire wake lock if user switches back to the tab
+  document.addEventListener('visibilitychange', () => {
+    if (wakeLock !== null && document.visibilityState === 'visible') {
+      requestWakeLock();
+    }
+  });
+
   // Event Listeners for + / - Buttons using unified Pointer Events (fixes touch double-firing)
   document.querySelectorAll('.btn[data-action]').forEach(button => {
     const action = button.getAttribute('data-action');
