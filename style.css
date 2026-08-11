@@ -368,17 +368,83 @@ body {
   background: #dc2626;
 }
 
-/* Mobile Small Screens */
-@media (max-width: 380px) {
+/* Mobile Screen Compact Sizing (iPhone 15, SE, Android) */
+@media (max-width: 639px) {
   body {
-    padding: 10px;
+    padding: 8px 10px;
   }
-  
+
+  .app-container {
+    gap: 8px;
+  }
+
+  .app-header {
+    padding: 8px 12px;
+  }
+
+  .header-title-wrap h1 {
+    font-size: 1.15rem;
+  }
+
+  .header-title-wrap .subtitle {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+  }
+
+  .reset-button {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .reset-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .counters-grid {
+    gap: 8px;
+  }
+
+  .card {
+    padding: 10px 8px;
+    border-radius: 14px;
+  }
+
+  .card-header {
+    padding: 4px 8px;
+    margin-bottom: 4px;
+    gap: 6px;
+    border-radius: 8px;
+  }
+
+  .card-header .icon {
+    font-size: 1.1rem;
+  }
+
+  .card-header h2 {
+    font-size: 0.85rem;
+  }
+
+  .counter-display {
+    margin: 2px 0 6px 0;
+    height: 48px;
+  }
+
   .counter-display .value {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
+  }
+
+  .controls {
+    gap: 6px;
   }
 
   .btn {
-    height: 48px;
+    height: 42px;
+    border-radius: 10px;
+  }
+
+  .btn svg {
+    width: 22px;
+    height: 22px;
   }
 }
