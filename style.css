@@ -8,7 +8,7 @@
   
   --bg-main: #f8fafc;
   --card-border: rgba(0, 0, 0, 0.08);
-  --card-shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
+  --card-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
   
   --text-primary: #000000;
   --text-secondary: #000000;
@@ -20,9 +20,9 @@
   --bg-power: rgb(170, 170, 170);     /* Gray */
   --bg-corruption: rgb(170, 200, 230);/* Corruption */
   
-  --radius-lg: 20px;
-  --radius-md: 14px;
-  --radius-sm: 8px;
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
 }
 
 * {
@@ -45,16 +45,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 16px;
+  padding: 8px 10px;
   touch-action: manipulation;
 }
 
 .app-container {
   width: 100%;
-  max-width: 900px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 /* Header Styling */
@@ -62,25 +62,25 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 18px;
+  padding: 8px 12px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: var(--radius-md);
-  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
 .header-title-wrap h1 {
   font-family: var(--font-title);
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   font-weight: 900;
   letter-spacing: 0.5px;
   color: #000000;
 }
 
 .header-title-wrap .subtitle {
-  font-size: 0.68rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
   color: #b45309;
   text-transform: uppercase;
   margin-top: 1px;
@@ -89,24 +89,28 @@ body {
 .reset-button {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   background: #f1f5f9;
   border: 1px solid #cbd5e1;
   color: #000000;
-  padding: 8px 14px;
+  padding: 5px 10px;
   border-radius: var(--radius-sm);
   font-family: var(--font-primary);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+
+.reset-button svg {
+  width: 15px;
+  height: 15px;
 }
 
 .reset-button:hover {
   background: #fee2e2;
   border-color: #fca5a5;
   color: #dc2626;
-  transform: translateY(-1px);
 }
 
 .reset-button:active {
@@ -117,13 +121,13 @@ body {
 .counters-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 8px;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 520px) {
   .counters-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    gap: 10px;
   }
 }
 
@@ -131,7 +135,7 @@ body {
 .card {
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
-  padding: 18px 16px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,31 +157,31 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 10px;
+  gap: 6px;
+  margin-bottom: 4px;
   background: #ffffff;
-  padding: 6px 14px;
-  border-radius: 12px;
+  padding: 3px 8px;
+  border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   width: 100%;
 }
 
 .card-header .icon {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   line-height: 1;
 }
 
 .card-header h2 {
-  font-size: 1.1rem;
+  font-size: 0.85rem;
   font-weight: 800;
   color: #000000;
   text-transform: capitalize;
 }
 
 .counter-display {
-  margin: 6px 0 14px 0;
-  height: 64px;
+  margin: 2px 0 4px 0;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,7 +189,7 @@ body {
 }
 
 .counter-display .value {
-  font-size: 3.5rem;
+  font-size: 2.2rem;
   font-weight: 900;
   line-height: 1;
   letter-spacing: -1px;
@@ -218,13 +222,13 @@ body {
 .controls {
   display: flex;
   width: 100%;
-  gap: 10px;
+  gap: 6px;
 }
 
 .btn {
   flex: 1;
-  height: 54px;
-  border-radius: var(--radius-md);
+  height: 40px;
+  border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   background: rgba(255, 255, 255, 0.45);
   color: #000000;
@@ -239,13 +243,14 @@ body {
 }
 
 .btn svg {
+  width: 20px;
+  height: 20px;
   stroke: #000000;
 }
 
 .btn:hover {
   background: #ffffff;
   border-color: rgba(0, 0, 0, 0.3);
-  transform: translateY(-1px);
 }
 
 .btn:active {
@@ -312,37 +317,37 @@ body {
   background: #ffffff;
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 20px;
   width: 100%;
-  max-width: 360px;
+  max-width: 320px;
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
   text-align: center;
 }
 
 .modal-content h3 {
-  font-size: 1.25rem;
-  margin-bottom: 8px;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
   color: #000000;
 }
 
 .modal-content p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #334155;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   line-height: 1.4;
 }
 
 .modal-actions {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 
 .modal-btn {
   flex: 1;
-  padding: 12px;
+  padding: 10px;
   border-radius: var(--radius-md);
   font-family: var(--font-primary);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   border: none;
@@ -366,85 +371,4 @@ body {
 
 .modal-btn.confirm:hover {
   background: #dc2626;
-}
-
-/* Mobile Screen Compact Sizing (iPhone 15, SE, Android) */
-@media (max-width: 639px) {
-  body {
-    padding: 8px 10px;
-  }
-
-  .app-container {
-    gap: 8px;
-  }
-
-  .app-header {
-    padding: 8px 12px;
-  }
-
-  .header-title-wrap h1 {
-    font-size: 1.15rem;
-  }
-
-  .header-title-wrap .subtitle {
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-  }
-
-  .reset-button {
-    padding: 6px 10px;
-    font-size: 0.75rem;
-  }
-
-  .reset-button svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .counters-grid {
-    gap: 8px;
-  }
-
-  .card {
-    padding: 10px 8px;
-    border-radius: 14px;
-  }
-
-  .card-header {
-    padding: 4px 8px;
-    margin-bottom: 4px;
-    gap: 6px;
-    border-radius: 8px;
-  }
-
-  .card-header .icon {
-    font-size: 1.1rem;
-  }
-
-  .card-header h2 {
-    font-size: 0.85rem;
-  }
-
-  .counter-display {
-    margin: 2px 0 6px 0;
-    height: 48px;
-  }
-
-  .counter-display .value {
-    font-size: 2.2rem;
-  }
-
-  .controls {
-    gap: 6px;
-  }
-
-  .btn {
-    height: 42px;
-    border-radius: 10px;
-  }
-
-  .btn svg {
-    width: 22px;
-    height: 22px;
-  }
 }
