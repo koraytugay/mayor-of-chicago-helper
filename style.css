@@ -8,7 +8,7 @@
   
   --bg-main: #f8fafc;
   --card-border: rgba(0, 0, 0, 0.08);
-  --card-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  --card-shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
   
   --text-primary: #000000;
   --text-secondary: #000000;
@@ -20,9 +20,9 @@
   --bg-power: rgb(170, 170, 170);     /* Gray */
   --bg-corruption: rgb(170, 200, 230);/* Corruption */
   
-  --radius-lg: 14px;
-  --radius-md: 10px;
-  --radius-sm: 6px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 8px;
 }
 
 * {
@@ -45,42 +45,42 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 8px 10px;
+  padding: 16px;
   touch-action: manipulation;
 }
 
 .app-container {
   width: 100%;
-  max-width: 600px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 
-/* Header Styling */
+/* Header Styling - Desktop Default */
 .app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 12px;
+  padding: 14px 18px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: var(--radius-md);
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
 }
 
 .header-title-wrap h1 {
   font-family: var(--font-title);
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   font-weight: 900;
   letter-spacing: 0.5px;
   color: #000000;
 }
 
 .header-title-wrap .subtitle {
-  font-size: 0.6rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   color: #b45309;
   text-transform: uppercase;
   margin-top: 1px;
@@ -89,22 +89,22 @@ body {
 .reset-button {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   background: #f1f5f9;
   border: 1px solid #cbd5e1;
   color: #000000;
-  padding: 5px 10px;
+  padding: 8px 14px;
   border-radius: var(--radius-sm);
   font-family: var(--font-primary);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .reset-button svg {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
 }
 
 .reset-button:hover {
@@ -117,25 +117,18 @@ body {
   transform: scale(0.95);
 }
 
-/* Counters Grid */
+/* Counters Grid - Desktop Default (3 Columns) */
 .counters-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 
-@media (min-width: 520px) {
-  .counters-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-}
-
-/* Counter Card Styling */
+/* Counter Card Styling - Desktop Default */
 .card {
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
-  padding: 8px;
+  padding: 18px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -157,31 +150,31 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  margin-bottom: 4px;
+  gap: 8px;
+  margin-bottom: 10px;
   background: #ffffff;
-  padding: 3px 8px;
-  border-radius: 8px;
+  padding: 6px 14px;
+  border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
   width: 100%;
 }
 
 .card-header .icon {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1;
 }
 
 .card-header h2 {
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: #000000;
   text-transform: capitalize;
 }
 
 .counter-display {
-  margin: 2px 0 4px 0;
-  height: 44px;
+  margin: 6px 0 14px 0;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -189,7 +182,7 @@ body {
 }
 
 .counter-display .value {
-  font-size: 2.2rem;
+  font-size: 3.5rem;
   font-weight: 900;
   line-height: 1;
   letter-spacing: -1px;
@@ -218,17 +211,17 @@ body {
   100% { transform: scale(1); }
 }
 
-/* Control Buttons Styling */
+/* Control Buttons Styling - Desktop Default */
 .controls {
   display: flex;
   width: 100%;
-  gap: 6px;
+  gap: 10px;
 }
 
 .btn {
   flex: 1;
-  height: 40px;
-  border-radius: 8px;
+  height: 54px;
+  border-radius: var(--radius-md);
   border: 1px solid rgba(0, 0, 0, 0.15);
   background: rgba(255, 255, 255, 0.45);
   color: #000000;
@@ -243,8 +236,8 @@ body {
 }
 
 .btn svg {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   stroke: #000000;
 }
 
@@ -317,37 +310,37 @@ body {
   background: #ffffff;
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 24px;
   width: 100%;
-  max-width: 320px;
+  max-width: 360px;
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
   text-align: center;
 }
 
 .modal-content h3 {
-  font-size: 1.1rem;
-  margin-bottom: 6px;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
   color: #000000;
 }
 
 .modal-content p {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #334155;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   line-height: 1.4;
 }
 
 .modal-actions {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .modal-btn {
   flex: 1;
-  padding: 10px;
+  padding: 12px;
   border-radius: var(--radius-md);
   font-family: var(--font-primary);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   border: none;
@@ -371,4 +364,87 @@ body {
 
 .modal-btn.confirm:hover {
   background: #dc2626;
+}
+
+/* Mobile Screens Only (< 640px width - e.g. iPhone 15) */
+@media (max-width: 639px) {
+  body {
+    padding: 8px 10px;
+  }
+
+  .app-container {
+    max-width: 100%;
+    gap: 8px;
+  }
+
+  .app-header {
+    padding: 8px 12px;
+  }
+
+  .header-title-wrap h1 {
+    font-size: 1.15rem;
+  }
+
+  .header-title-wrap .subtitle {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+  }
+
+  .reset-button {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .reset-button svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .counters-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .card {
+    padding: 8px 6px;
+    border-radius: 12px;
+  }
+
+  .card-header {
+    padding: 4px 6px;
+    margin-bottom: 4px;
+    gap: 6px;
+    border-radius: 8px;
+  }
+
+  .card-header .icon {
+    font-size: 1.1rem;
+  }
+
+  .card-header h2 {
+    font-size: 0.85rem;
+  }
+
+  .counter-display {
+    margin: 2px 0 4px 0;
+    height: 46px;
+  }
+
+  .counter-display .value {
+    font-size: 2.2rem;
+  }
+
+  .controls {
+    gap: 6px;
+  }
+
+  .btn {
+    height: 40px;
+    border-radius: 8px;
+  }
+
+  .btn svg {
+    width: 20px;
+    height: 20px;
+  }
 }
