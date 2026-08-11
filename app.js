@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize UI display
   updateAllDisplays();
 
-  // Event Listeners for + / - Buttons
+  // Event Listeners for + / - Buttons using unified Pointer Events (fixes touch double-firing)
   document.querySelectorAll('.btn[data-action]').forEach(button => {
     const action = button.getAttribute('data-action');
     const resource = button.getAttribute('data-target');
@@ -35,14 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let pressTimer = null;
     let repeatInterval = null;
 
-    const handlePressStart = (e) => {
-      // Prevent double firing on touch devices
-      if (e.type === 'touchstart') {
+    const startPress = (e) => {
+      if (e) {
         e.preventDefault();
       }
 
       triggerChange(resource, action);
       triggerHaptic();
+
+      stopPress();
 
       // Setup continuous increment/decrement on hold
       pressTimer = setTimeout(() => {
@@ -53,19 +54,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 400);
     };
 
-    const handlePressEnd = () => {
-      if (pressTimer) clearTimeout(pressTimer);
-      if (repeatInterval) clearInterval(repeatInterval);
+    const stopPress = () => {
+      if (pressTimer) {
+        clearTimeout(pressTimer);
+        pressTimer = null;
+      }
+      if (repeatInterval) {
+        clearInterval(repeatInterval);
+        repeatInterval = null;
+      }
     };
 
-    // Click / Mouse / Touch bindings
-    button.addEventListener('mousedown', handlePressStart);
-    button.addEventListener('mouseup', handlePressEnd);
-    button.addEventListener('mouseleave', handlePressEnd);
-
-    button.addEventListener('touchstart', handlePressStart, { passive: false });
-    button.addEventListener('touchend', handlePressEnd);
-    button.addEventListener('touchcancel', handlePressEnd);
+    button.addEventListener('pointerdown', startPress);
+    button.addEventListener('pointerup', stopPress);
+    button.addEventListener('pointercancel', stopPress);
+    button.addEventListener('pointerleave', stopPress);
   });
 
   // Modal & Reset logic
