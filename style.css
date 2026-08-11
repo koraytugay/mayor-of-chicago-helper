@@ -15,7 +15,7 @@
   
   /* Resource Specific Card Background Colors */
   --bg-vote: rgb(160, 200, 92);   /* Green */
-  --bg-popularity: #fca5a5;  /* Red */
+  --bg-popularity: rgb(230, 150, 125);  /* Red */
   --bg-money: #fde047;       /* Yellow */
   --bg-booze: #e9d5ff;       /* Light Purple */
   --bg-power: #fed7aa;       /* Orange */
