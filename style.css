@@ -369,110 +369,101 @@ body {
 /* Mobile Screens Only (< 640px width - e.g. iPhone 15) */
 @media (max-width: 639px) {
   html, body {
-    height: 100%;
-    overflow: hidden;
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   body {
-    padding: 8px;
-    height: 100vh;
-    height: 100dvh;
+    padding: 10px 10px 16px 10px;
   }
 
   .app-container {
-    height: 100%;
     max-width: 100%;
-    gap: 8px;
-    display: flex;
-    flex-direction: column;
+    gap: 10px;
+    height: auto;
   }
 
   .app-header {
-    flex-shrink: 0;
-    padding: 8px 12px;
+    padding: 10px 14px;
   }
 
   .header-title-wrap h1 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 
   .header-title-wrap .subtitle {
-    font-size: 0.6rem;
+    font-size: 0.62rem;
     letter-spacing: 2px;
   }
 
   .reset-button {
-    padding: 5px 10px;
-    font-size: 0.75rem;
+    padding: 6px 11px;
+    font-size: 0.78rem;
   }
 
   .reset-button svg {
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
   }
 
   .counters-grid {
-    flex: 1;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 8px;
-    min-height: 0;
+    grid-template-rows: auto;
+    gap: 10px;
   }
 
   .card {
-    height: 100%;
-    padding: 8px 6px;
-    border-radius: 12px;
+    height: auto;
+    padding: 10px 8px;
+    border-radius: 14px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    overflow: hidden;
   }
 
   .card-header {
-    flex-shrink: 0;
-    padding: 4px 8px;
-    margin-bottom: 2px;
+    padding: 5px 10px;
+    margin-bottom: 4px;
     gap: 6px;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 100%;
   }
 
   .card-header .icon {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 
   .card-header h2 {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .counter-display {
-    flex: 1;
-    margin: 0;
-    height: auto;
+    margin: 4px 0 8px 0;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 0;
   }
 
   .counter-display .value {
-    font-size: clamp(2rem, 5.5vh, 3.2rem);
+    font-size: 2.3rem;
     line-height: 1;
   }
 
   .controls {
-    flex-shrink: 0;
-    gap: 6px;
+    gap: 8px;
     width: 100%;
   }
 
   .btn {
-    height: clamp(38px, 5.5vh, 48px);
-    border-radius: 8px;
+    height: 44px;
+    border-radius: 10px;
+    touch-action: manipulation;
   }
 
   .btn svg {
