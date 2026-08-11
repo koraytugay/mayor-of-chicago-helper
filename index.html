@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mayor of Chicago - Helper</title>
+  <meta name="description" content="Minimalist tracker for Mayor of Chicago board game resources: Votes, Popularity, Money, Booze, Power, and Corruption.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-title-wrap">
+        <h1>MAYOR OF CHICAGO</h1>
+        <p class="subtitle">RESOURCE TRACKER</p>
+      </div>
+      <button id="reset-btn" class="reset-button" title="Reset all counters to default" aria-label="Reset counters">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+        </svg>
+        <span>Reset</span>
+      </button>
+    </header>
+
+    <main class="counters-grid">
+      <!-- Vote Counter -->
+      <div class="card card-vote" data-resource="vote">
+        <div class="card-header">
+          <span class="icon">🗳️</span>
+          <h2>Votes</h2>
+        </div>
+        <div class="counter-display">
+          <span class="value" id="val-vote">0</span>
+        </div>
+        <div class="controls">
+          <button class="btn btn-minus" data-action="decrement" data-target="vote" aria-label="Decrease votes">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+          <button class="btn btn-plus" data-action="increment" data-target="vote" aria-label="Increase votes">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Popularity Counter -->
+      <div class="card card-popularity" data-resource="popularity">
+        <div class="card-header">
+          <span class="icon">⭐</span>
+          <h2>Popularity</h2>
+        </div>
+        <div class="counter-display">
+          <span class="value" id="val-popularity">0</span>
+        </div>
+        <div class="controls">
+          <button class="btn btn-minus" data-action="decrement" data-target="popularity" aria-label="Decrease popularity">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+          <button class="btn btn-plus" data-action="increment" data-target="popularity" aria-label="Increase popularity">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Money Counter -->
+      <div class="card card-money" data-resource="money">
+        <div class="card-header">
+          <span class="icon">💵</span>
+          <h2>Money</h2>
+        </div>
+        <div class="counter-display">
+          <span class="value" id="val-money">25</span>
+        </div>
+        <div class="controls">
+          <button class="btn btn-minus" data-action="decrement" data-target="money" aria-label="Decrease money">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+          <button class="btn btn-plus" data-action="increment" data-target="money" aria-label="Increase money">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Booze Counter -->
+      <div class="card card-booze" data-resource="booze">
+        <div class="card-header">
+          <span class="icon">🍺</span>
+          <h2>Booze</h2>
+        </div>
+        <div class="counter-display">
+          <span class="value" id="val-booze">0</span>
+        </div>
+        <div class="controls">
+          <button class="btn btn-minus" data-action="decrement" data-target="booze" aria-label="Decrease booze">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+          <button class="btn btn-plus" data-action="increment" data-target="booze" aria-label="Increase booze">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Power Counter -->
+      <div class="card card-power" data-resource="power">
+        <div class="card-header">
+          <span class="icon">⚡</span>
+          <h2>Power</h2>
+        </div>
+        <div class="counter-display">
+          <span class="value" id="val-power">0</span>
+        </div>
+        <div class="controls">
+          <button class="btn btn-minus" data-action="decrement" data-target="power" aria-label="Decrease power">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+          <button class="btn btn-plus" data-action="increment" data-target="power" aria-label="Increase power">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Corruption Counter -->
+      <div class="card card-corruption" data-resource="corruption">
+        <div class="card-header">
+          <span class="icon">💼</span>
+          <h2>Corruption</h2>
+        </div>
+        <div class="counter-display">
+          <span class="value" id="val-corruption">0</span>
+        </div>
+        <div class="controls">
+          <button class="btn btn-minus" data-action="decrement" data-target="corruption" aria-label="Decrease corruption">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+          <button class="btn btn-plus" data-action="increment" data-target="corruption" aria-label="Increase corruption">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal for Reset Confirmation -->
+  <div id="reset-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <h3>Reset All Counters?</h3>
+      <p>Money will reset to 25 and all other counters will reset to 0.</p>
+      <div class="modal-actions">
+        <button id="modal-cancel" class="modal-btn cancel">Cancel</button>
+        <button id="modal-confirm" class="modal-btn confirm">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
