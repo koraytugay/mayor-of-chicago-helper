@@ -425,20 +425,21 @@ body {
 
   .card {
     height: 100%;
-    padding: 8px 6px;
+    padding: 6px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    box-sizing: border-border;
+    gap: 4px;
+    box-sizing: border-box;
     overflow: hidden;
   }
 
   .card-header {
     flex-shrink: 0;
-    padding: 4px 8px;
-    margin-bottom: 2px;
+    padding: 3px 8px;
+    margin-bottom: 0;
     gap: 6px;
     border-radius: 8px;
     width: 100%;
@@ -464,7 +465,7 @@ body {
   }
 
   .counter-display .value {
-    font-size: clamp(2rem, 5.2vh, 3.2rem);
+    font-size: clamp(2.4rem, 6.5vh, 4rem);
     line-height: 1;
   }
 
@@ -475,13 +476,13 @@ body {
   }
 
   .btn {
-    height: clamp(36px, 5.2vh, 46px);
+    height: clamp(38px, 6vh, 50px);
     border-radius: 8px;
     touch-action: manipulation;
   }
 
   .btn svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
   }
 }
