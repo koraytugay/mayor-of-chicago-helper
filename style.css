@@ -368,16 +368,27 @@ body {
 
 /* Mobile Screens Only (< 640px width - e.g. iPhone 15) */
 @media (max-width: 639px) {
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+
   body {
-    padding: 8px 10px;
+    padding: 8px;
+    height: 100vh;
+    height: 100dvh;
   }
 
   .app-container {
+    height: 100%;
     max-width: 100%;
     gap: 8px;
+    display: flex;
+    flex-direction: column;
   }
 
   .app-header {
+    flex-shrink: 0;
     padding: 8px 12px;
   }
 
@@ -401,50 +412,71 @@ body {
   }
 
   .counters-grid {
+    flex: 1;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 8px;
+    min-height: 0;
   }
 
   .card {
-    padding: 12px 10px;
-    border-radius: 14px;
+    height: 100%;
+    padding: 8px 6px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
   }
 
   .card-header {
-    padding: 5px 10px;
-    margin-bottom: 6px;
+    flex-shrink: 0;
+    padding: 4px 8px;
+    margin-bottom: 2px;
     gap: 6px;
-    border-radius: 10px;
+    border-radius: 8px;
+    width: 100%;
   }
 
   .card-header .icon {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 
   .card-header h2 {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 
   .counter-display {
-    margin: 4px 0 8px 0;
-    height: 52px;
+    flex: 1;
+    margin: 0;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 0;
   }
 
   .counter-display .value {
-    font-size: 2.6rem;
+    font-size: clamp(2rem, 5.5vh, 3.2rem);
+    line-height: 1;
   }
 
   .controls {
-    gap: 8px;
+    flex-shrink: 0;
+    gap: 6px;
+    width: 100%;
   }
 
   .btn {
-    height: 48px;
-    border-radius: 10px;
+    height: clamp(38px, 5.5vh, 48px);
+    border-radius: 8px;
   }
 
   .btn svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
   }
 }
